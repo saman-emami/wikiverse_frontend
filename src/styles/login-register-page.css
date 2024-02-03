@@ -1,0 +1,115 @@
+.form-box-container {
+	width: 100%;
+	height: calc(100vh - 64px);
+	min-height: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: fade-in 0.2s;
+}
+
+.form-box {
+	flex-grow: 1;
+	max-width: 400px;
+	padding: 20px;
+	border-radius: 7px;
+	border: 2px solid black;
+	margin: 0 30px;
+}
+
+.form-box h1 {
+	font-size: 40px;
+	text-align: center;
+}
+
+.field-container {
+	height: 40px;
+	margin: 20px 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.form-title {
+	font-family: 'Libre Baskerville', serif;
+	margin-bottom: 20px;
+}
+
+.form-field {
+	border-radius: 7px;
+	padding: 5px 20px;
+	width: 100%;
+	flex-grow: 1;
+	border: 2px solid rgba(0, 0, 0, 0.055);
+}
+
+.form-field::placeholder {
+	color: black;
+}
+
+.submit-button {
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+	width: 100%;
+	background-color: black;
+	color: white;
+	padding: 10px;
+	border: none;
+	border-radius: 7px;
+	transition: transform 0.2s;
+	display: flex;
+	justify-content: center;
+}
+
+.submit-button:hover {
+	transform: scale(1.02);
+	transition: transform 0.2s;
+}
+
+.form-bottom-message {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.form-bottom-message a {
+	color: rgb(0, 110, 255);
+	font-weight: bold;
+}
+
+.Form-error-message {
+	background-color: #f3d8da;
+	border: 2px solid #f0d1d3;
+	color: #6a2326;
+	margin-bottom: 20px;
+	border-radius: 7px;
+	padding: 15px;
+	animation: error 0.2s;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes error {
+	0% {
+		opacity: 0;
+		transform: translateX(-15px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.submit-button .loader {
+	filter: invert(100%);
+	width: 20px;
+	margin-left: 10px;
+}

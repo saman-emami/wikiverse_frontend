@@ -1,0 +1,81 @@
+.page-header {
+	position: sticky;
+	top: 0;
+	z-index: 3;
+	padding: 0 20px;
+	background-color: white;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.055);
+	height: 64px;
+	display: flex;
+	align-items: center;
+}
+
+.header-title-container {
+	text-decoration: none;
+	color: black;
+}
+
+#header-title {
+	font-family: 'Libre Baskerville', serif;
+	font-size: 20px;
+}
+
+.header-button {
+	padding: 10px 20px;
+	white-space: nowrap;
+}
+
+.header-button-container:hover {
+	transform: scale(1.05);
+	transition: transform 0.2s;
+}
+
+.header-button-container {
+	text-decoration: none;
+}
+
+.header-button-container:last-child .header-button {
+	margin-left: 10px;
+	background-color: black;
+	border-radius: 9999px;
+	color: white;
+}
+
+.header-button-container:nth-child(2) {
+	margin-left: auto;
+	color: black;
+}
+
+#logout-button {
+	background-color: black;
+	position: relative;
+	border-radius: 50%;
+	display: flex;
+	padding: 6px;
+	fill: white;
+	cursor: pointer;
+	margin-inline: auto 10px;
+	transition: transform 0.2s;
+}
+
+#logout-button:hover::before {
+	content: 'Logout';
+	color: white;
+	background-color: rgba(0, 0, 0, 0.932);
+	width: 50px;
+	padding: 8px;
+	border-radius: 5px;
+	position: absolute;
+	left: -17px;
+	bottom: -38px;
+	animation: fade-in 0.2s;
+}
+
+#logout-button:hover {
+	transform: scale(1.05);
+	transition: transform 0.2s;
+}
+
+#header-hello-message {
+	font-weight: bold;
+}

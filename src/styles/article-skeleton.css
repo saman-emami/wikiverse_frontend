@@ -1,0 +1,236 @@
+:root {
+	--skeleton-gradient: linear-gradient(
+		90deg,
+		#ffffff00 20%,
+		#ffffffb2 50%,
+		#ffffff00 80%
+	);
+	--skeleton-color: #f1f1f1;
+	--animation-shimmer-speed: 1s;
+	--animation-fade-in-speed: 0.2s;
+}
+
+.skeleton-page-container {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	animation: fade-in var(--animation-fade-in-speed);
+}
+
+.skeletion-article-container {
+	grid-column-start: 2;
+	max-width: 890px;
+	height: 800px;
+	margin-inline: auto;
+}
+
+.skeleton-article {
+	background-color: rgba(116, 0, 0, 0);
+	height: 800px;
+	margin-inline: 20px;
+}
+
+.skeleton-header-1 {
+	background-color: var(--skeleton-color);
+	height: 33px;
+	width: 50%;
+	border-radius: 9999px;
+	margin: 25px 0;
+	display: block;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.skeleton-header-1::after {
+	background-image: var(--skeleton-gradient);
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	transform: translate(-100%);
+	border-radius: 9999px;
+	animation: shimmer var(--animation-shimmer-speed) infinite;
+}
+
+.skeleton-header-2 {
+	display: flex;
+	align-items: center;
+	padding: 10px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.047);
+	margin-bottom: 5px;
+}
+
+.skeleton-header-2 svg {
+	fill: var(--skeleton-color);
+}
+
+.skeleton-header-2-text {
+	background-color: var(--skeleton-color);
+	border-radius: 9999px;
+	height: 22px;
+	width: 40%;
+	margin: 8px 0 8px 10px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.skeleton-header-2-text::after {
+	background-image: var(--skeleton-gradient);
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	transform: translate(-100%);
+	border-radius: 9999px;
+	animation: shimmer var(--animation-shimmer-speed) infinite;
+}
+
+.skeleton-toolbar {
+	height: 42px;
+	padding: 5px 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.047);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.047);
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.skeleton-toolbar-button {
+	background-color: var(--skeleton-color);
+	height: 15px;
+	margin: 7.5px;
+	border-radius: 9999px;
+	width: 90px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.skeleton-toolbar-button::after {
+	background-image: var(--skeleton-gradient);
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	transform: translate(-100%);
+	border-radius: 9999px;
+	animation: shimmer var(--animation-shimmer-speed) infinite;
+}
+
+.skeleton-paragraph {
+	padding: 5px 0;
+	margin-bottom: 20px;
+}
+
+.skeleton-text {
+	background-color: var(--skeleton-color);
+	border-radius: 9999px;
+	height: 12px;
+	margin: 20px 0;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.skeleton-text::after {
+	background-image: var(--skeleton-gradient);
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	transform: translate(-100%);
+	border-radius: 9999px;
+	animation: shimmer var(--animation-shimmer-speed) infinite;
+}
+
+.skeleton-text:first-child {
+	margin: 0 0 10px 0;
+}
+
+.skeleton-text:last-child {
+	margin: 10px 0 0 0;
+	width: 40%;
+}
+
+.skeleton-sidebar {
+	width: 290px;
+}
+
+@media screen and (max-width: 900px) {
+	.skeleton-sidebar {
+		display: none;
+	}
+}
+
+.skeleton-sidebar-header {
+	margin: 129px 20px 0 20px;
+	background-color: var(--skeleton-color);
+	height: 20px;
+	width: 30%;
+	border-radius: 9999px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.skeleton-sidebar-header::after {
+	background-image: var(--skeleton-gradient);
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	transform: translate(-100%);
+	border-radius: 9999px;
+	animation: shimmer var(--animation-shimmer-speed) infinite;
+}
+
+.skeleton-sidebar-text {
+	background-color: var(--skeleton-color);
+	height: 10px;
+	border-radius: 9999px;
+	margin: 20px;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.skeleton-sidebar-text::after {
+	background-image: var(--skeleton-gradient);
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 10;
+	transform: translate(-100%);
+	border-radius: 9999px;
+	animation: shimmer var(--animation-shimmer-speed) infinite;
+}
+
+@keyframes shimmer {
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

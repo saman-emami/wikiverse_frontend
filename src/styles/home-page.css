@@ -1,0 +1,230 @@
+.article-cards-section {
+	width: calc(100% - 20px);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin: 20px 0 0 20px;
+}
+
+.home-page-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1200px;
+	margin-inline: auto;
+	margin-bottom: 40px;
+}
+
+.home-page-section:last-child {
+	margin-bottom: 300px;
+}
+
+.home-page-section-title {
+	width: calc(100% - 40px);
+	font-family: 'Libre Baskerville', serif;
+	font-size: 40px;
+	align-self: flex-start;
+	margin: 20px;
+	margin-bottom: 0;
+	padding-bottom: 20px;
+	border-bottom: 1px dashed #ebebeb;
+}
+
+.create-article-section-container {
+	max-width: 1200px;
+	margin-inline: auto;
+}
+
+.create-article-section {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 20px;
+	padding: 15px;
+	border-radius: 7px;
+	background-color: black;
+	color: white;
+	justify-content: space-between;
+}
+
+.create-article-section h2 {
+	font-family: 'Libre Baskerville', serif;
+	font-size: 20px;
+	text-align: center;
+}
+
+.new-article-button-container {
+	text-decoration: none;
+}
+
+.new-article-button {
+	background-color: white;
+	color: black;
+	fill: black;
+	display: inline-flex;
+	align-items: center;
+	padding: 5px 20px;
+	border-radius: 9999px;
+	text-decoration: none;
+	font-weight: bold;
+	transform: scale(1);
+	transition: transform 0.2s;
+}
+
+.new-article-button:hover {
+	transform: scale(1.05);
+	transition: transform 0.2s;
+}
+
+.new-article-button svg {
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 700px) {
+	.home-page-section-title {
+		font-size: 30px;
+	}
+
+	.create-article-section {
+		justify-content: center;
+		flex-direction: column;
+		padding: 30px 20px;
+	}
+
+	.new-article-button-container {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		text-decoration: none;
+	}
+
+	.new-article-button {
+		width: 100%;
+		max-width: 300px;
+		margin-top: 20px;
+		justify-content: center;
+	}
+}
+
+.home-page-sections-container {
+	animation: fade-in 0.2s;
+}
+
+.home-page-container {
+	animation: fade-in 0.2s;
+}
+
+.home-page-loading-container {
+	width: 100%;
+	height: calc(100vh - 64px - 104px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.search-bar-section-container {
+	max-width: 1200px;
+
+	margin: 20px auto;
+}
+
+.search-bar-section {
+	margin-inline: 20px;
+	display: flex;
+	align-items: center;
+	background-color: rgb(248, 248, 248);
+	border: 1px solid rgba(0, 0, 0, 0.055);
+	padding: 0 10px;
+	border-radius: 7px;
+}
+
+.search-bar-section svg {
+	fill: rgba(0, 0, 0, 0.384);
+}
+
+#search-bar {
+	flex-grow: 1;
+	height: 45px;
+	font-size: 16px;
+	margin-right: 10px;
+	background-color: hsla(0, 0%, 0%, 0);
+	border: none;
+	outline: none;
+	position: relative;
+	transition: margin 0.2s, font-size 0.2s;
+}
+
+.search-bar-section:hover {
+	background-color: rgb(241, 241, 241);
+	transition: box-shadow 0.2s;
+}
+
+#search-bar:focus {
+	margin: 5px 8px;
+	font-size: 18px;
+	transition: margin 0.2s, font-size 0.2s;
+}
+
+#search-icon {
+	height: 24px;
+	cursor: pointer;
+	padding-right: 5px;
+}
+
+.no-search-results-message-container {
+	margin-inline: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 255px);
+}
+
+.no-search-results-message {
+	margin: 20px;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 25px;
+	color: #0000004b;
+	user-select: none;
+}
+
+::-webkit-scrollbar {
+	width: 11px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgba(0, 0, 0, 0.034);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.164);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #4e4e4e;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.loader {
+	width: 40px;
+	aspect-ratio: 1.154;
+	--_g: no-repeat radial-gradient(farthest-side, #000 90%, #0000);
+	background: var(--_g) 50% 0, var(--_g) 0 100%, var(--_g) 100% 100%;
+	background-size: 35% calc(35% * 1.154);
+	animation: l16 1s infinite;
+}
+@keyframes l16 {
+	50%,
+	100% {
+		background-position: 100% 100%, 50% 0, 0 100%;
+	}
+}

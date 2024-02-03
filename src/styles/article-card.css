@@ -1,0 +1,126 @@
+.article-card-container {
+	height: 400px;
+	position: relative;
+	margin: 0 20px 20px 0;
+	width: 100%;
+}
+
+.article-card-link {
+	text-decoration: none;
+	color: black;
+	flex-grow: 1;
+}
+
+.article-card {
+	position: absolute;
+	background-color: white;
+	width: 100%;
+	border: 1px solid rgba(0, 0, 0, 0.055);
+	border-radius: 7px;
+	min-height: 400px;
+	max-height: 400px;
+	padding: 15px;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	animation: card-in 0.2s;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media (pointer: fine) {
+	.article-card:hover {
+		position: absolute;
+		z-index: 2;
+		overflow-y: auto;
+		max-height: 700px;
+		box-shadow: 0 5px 5px rgba(0, 0, 0, 0.534), 0 0 0 100000px rgba(0, 0, 0, 0.096);
+		transition: max-height 0.2s, box-shadow 0.2s;
+	}
+
+	.article-card:hover .card-button {
+		opacity: 1;
+		transition: opacity 0.2s;
+	}
+
+	.article-card:hover .card-buttons-container {
+		position: sticky;
+		bottom: 0;
+	}
+}
+
+.card-button {
+	opacity: 0;
+	background-color: rgb(0, 0, 0);
+	font-size: 14px;
+	color: white;
+	fill: white;
+	border-radius: 9999px;
+	padding: 5px 18px;
+	margin-top: 10px;
+	margin-left: 10px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.548);
+	transition: opacity 0.2s;
+}
+
+.card-button.with-text svg {
+	margin-left: 8px;
+	text-decoration: none;
+}
+
+.card-button-link:link,
+.card-button-link:visited {
+	text-decoration: none;
+}
+
+.card-buttons-container {
+	margin-left: auto;
+	width: fit-content;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.article-card .article-title {
+	font-size: 20px;
+	margin: 10px 0;
+}
+
+@media screen and (min-width: 700px) {
+	.article-card-container {
+		width: calc(50% - 20px);
+	}
+
+	.article-card-container:first-child:not(
+			.home-page-search-section .article-card-container
+		) {
+		width: calc(100% - 20px);
+		text-decoration: none;
+		color: black;
+	}
+}
+
+@media screen and (min-width: 900px) {
+	.article-card-container {
+		width: calc(33.33% - 20px);
+	}
+
+	.article-card-container:first-child:not(
+			.home-page-search-section .article-card-container
+		) {
+		width: calc(66.66% - 20px);
+		text-decoration: none;
+		color: black;
+	}
+}
+
+@keyframes card-in {
+	0% {
+		transform: scale(1.02);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

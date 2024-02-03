@@ -1,0 +1,88 @@
+.error-page-container {
+	width: fit-content;
+	height: calc(100vh - 64px);
+	margin-inline: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	animation: fade-in 0.2s;
+}
+
+#error-header-1 {
+	color: rgb(206, 206, 206);
+	font-family: "Libre Baskerville", serif;
+}
+
+#error-header-2 {
+	font-family: "Libre Baskerville", serif;
+}
+
+#error-body {
+	margin-top: 10px;
+}
+
+#go-home-button span {
+	margin-top: 40px;
+	display: flex;
+	align-items: center;
+}
+
+#go-home-button {
+	align-self: flex-end;
+	color: black;
+	font-weight: bold;
+	transition: transform 0.2s;
+}
+
+#go-home-button:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+	transition: transform 0.2s;
+}
+
+#go-home-button svg {
+	margin-left: 5px;
+}
+
+#go-home-button:visited,
+#go-home-button:link {
+	text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+	#error-header-1 {
+		font-size: 22vw;
+	}
+
+	#error-header-2 {
+		font-size: 4.8vw;
+	}
+
+	#error-body {
+		font-size: 4vw;
+	}
+}
+
+@media screen and (min-width: 500px) {
+	#error-header-1 {
+		font-size: 11em;
+	}
+
+	#error-header-2 {
+		font-size: 1.8em;
+	}
+
+	#error-body {
+		font-size: 1.38em;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
