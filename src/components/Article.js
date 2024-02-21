@@ -45,6 +45,7 @@ function Article({ action }) {
 	const [article, articleDispatch] = useReducer(reducer, null)
 
 	async function initializeArticle() {
+		console.log(`https://wikiverse-backend.vercel.app/articles/${lang}/${slug}/`)
 		if (action === 'create') {
 			articleDispatch({
 				type: 'initialize',

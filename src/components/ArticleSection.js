@@ -1,18 +1,8 @@
 import React, { useState } from "react"
 import icons from "../styles/icons"
 
-function ArticleSection({
-	section,
-	isFirst,
-	idFormatter,
-	textDirectionStyle,
-	article,
-}) {
-	const initialIsOpenState = isFirst
-		? true
-		: window.innerWidth > 650
-		? true
-		: false
+function ArticleSection({ section, isFirst, idFormatter, textDirectionStyle, article }) {
+	const initialIsOpenState = isFirst ? true : window.innerWidth > 650 ? true : false
 
 	const [isOpen, setIsOpen] = useState(initialIsOpenState)
 
@@ -23,8 +13,7 @@ function ArticleSection({
 	}
 
 	const sectionContentContainerStyle = {
-		position: isOpen ? "relative" : "absolute",
-		left: isOpen ? "0px" : "-10000px",
+		display: isOpen ? "block" : "none",
 	}
 
 	function sectionParser(section) {
@@ -38,8 +27,7 @@ function ArticleSection({
 								style={textDirectionStyle}
 								id={idFormatter(block.data.text)}
 								key={block.id}
-								ref={(ref) => setInnerHTML(ref, block.data.text)}
-							></h1>
+								ref={(ref) => setInnerHTML(ref, block.data.text)}></h1>
 						)
 					} else if (block.data.level === 2) {
 						content.push(
@@ -48,8 +36,7 @@ function ArticleSection({
 								className="section-title"
 								id={idFormatter(block.data.text)}
 								key={block.id}
-								ref={(ref) => setInnerHTML(ref, block.data.text)}
-							></h2>
+								ref={(ref) => setInnerHTML(ref, block.data.text)}></h2>
 						)
 					} else {
 						content.push(
@@ -58,8 +45,7 @@ function ArticleSection({
 								style={textDirectionStyle}
 								id={idFormatter(block.data.text)}
 								key={block.id}
-								ref={(ref) => setInnerHTML(ref, block.data.text)}
-							></h3>
+								ref={(ref) => setInnerHTML(ref, block.data.text)}></h3>
 						)
 					}
 
@@ -70,8 +56,7 @@ function ArticleSection({
 							style={textDirectionStyle}
 							className="article-paragraph"
 							key={block.id}
-							ref={(ref) => setInnerHTML(ref, block.data.text)}
-						></p>
+							ref={(ref) => setInnerHTML(ref, block.data.text)}></p>
 					)
 					break
 				case "quote":
@@ -79,15 +64,13 @@ function ArticleSection({
 						<blockquote
 							style={textDirectionStyle}
 							className="article-quote"
-							key={block.id}
-						>
+							key={block.id}>
 							<q ref={(ref) => setInnerHTML(ref, block.data.text)}></q>
 							{block.data.caption && (
 								<p
 									ref={(ref) => setInnerHTML(ref, block.data.caption)}
 									style={textDirectionStyle}
-									className="article-quote-author"
-								></p>
+									className="article-quote-author"></p>
 							)}
 						</blockquote>
 					)
@@ -100,8 +83,7 @@ function ArticleSection({
 									<li
 										className="article-ordered-list-item"
 										key={index}
-										ref={(ref) => setInnerHTML(ref, item)}
-									></li>
+										ref={(ref) => setInnerHTML(ref, item)}></li>
 								))}
 							</ol>
 						)
@@ -112,8 +94,7 @@ function ArticleSection({
 									<li
 										className="article-unordered-list-item"
 										key={index}
-										ref={(ref) => setInnerHTML(ref, item)}
-									></li>
+										ref={(ref) => setInnerHTML(ref, item)}></li>
 								))}
 							</ul>
 						)
@@ -127,9 +108,7 @@ function ArticleSection({
 								src={block.data.url}
 								alt={block.data.caption}
 							/>
-							<figcaption style={textDirectionStyle}>
-								{block.data.caption}
-							</figcaption>
+							<figcaption style={textDirectionStyle}>{block.data.caption}</figcaption>
 						</figure>
 					)
 					break
@@ -158,8 +137,7 @@ function ArticleSection({
 							fontFamily: "Tahoma",
 					  }
 					: undefined
-			}
-		>
+			}>
 			{isFirst ? (
 				sectionParser(section)
 			) : (
@@ -167,15 +145,11 @@ function ArticleSection({
 					<div
 						style={textDirectionStyle}
 						onClick={toggleSectionOpen}
-						className="sections-title-container"
-					>
+						className="sections-title-container">
 						{isOpen ? icons.expandLess : icons.expandMore}
 						{sectionParser(section)[0]}
 					</div>
-					<div
-						className="section-content-container"
-						style={sectionContentContainerStyle}
-					>
+					<div className="section-content-container" style={sectionContentContainerStyle}>
 						{sectionParser(section).slice(1)}
 					</div>
 				</>

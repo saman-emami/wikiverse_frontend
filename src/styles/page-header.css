@@ -16,7 +16,7 @@
 }
 
 #header-title {
-	font-family: 'Libre Baskerville', serif;
+	font-family: "Libre Baskerville", serif;
 	font-size: 20px;
 }
 
@@ -47,19 +47,18 @@
 }
 
 #logout-button {
-	background-color: black;
 	position: relative;
 	border-radius: 50%;
 	display: flex;
 	padding: 6px;
-	fill: white;
+	fill: black;
 	cursor: pointer;
-	margin-inline: auto 10px;
+	margin-left: 10px;
 	transition: transform 0.2s;
 }
 
 #logout-button:hover::before {
-	content: 'Logout';
+	content: "Logout";
 	color: white;
 	background-color: rgba(0, 0, 0, 0.932);
 	width: 50px;
@@ -77,5 +76,6 @@
 }
 
 #header-hello-message {
+	margin-left: auto;
 	font-weight: bold;
 }
